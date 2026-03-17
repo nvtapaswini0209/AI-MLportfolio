@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+
+  build:
+    commands:
+      - echo "Build started"
+      - cp lambda/resume_analyzer_lambda.py lambda_function.py
+      - zip lambda_function.zip lambda_function.py
+
+artifacts:
+  files:
+    - lambda_function.zip

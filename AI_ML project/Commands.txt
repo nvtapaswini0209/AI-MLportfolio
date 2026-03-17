@@ -1,0 +1,43 @@
+1. Create S3 bucket
+   resume-analyzer-tapaswini
+
+2. Create input/ folder in S3
+
+3. Upload resume files
+   resume1.txt
+   resume2.txt
+   resume3.txt
+   resume4.txt
+   resume5.txt
+
+4. Create DynamoDB table
+   Table name: ResumeAnalysis
+   Partition key: resume_id
+
+5. Create Lambda function
+   resume-analyzer-function
+
+6. Use existing role
+   LabRole
+
+7. Paste Lambda code and deploy
+
+8. Set Lambda timeout to 30 seconds
+
+9. Add S3 trigger
+   Event: All object create events
+   Prefix: input/
+
+10. Upload resume file again to trigger Lambda
+
+11. Check CloudWatch logs
+
+12. Check DynamoDB results
+
+13. Push code to GitHub
+
+14. Create CodeBuild project
+
+15. Create CodePipeline
+
+16. Connect GitHub → CodePipeline → CodeBuild → Lambda
